@@ -1,0 +1,1 @@
+# BS_Device_type_analisys
