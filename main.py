@@ -47,21 +47,13 @@ df_export.to_csv(export_filename)
 
 # Plot resulted data
 plt.rcParams.update({'font.size': 6})  # must set in top
+df_export = df_export.sort_values(by='Total', ascending=False) #Set descending order based on total devices
 df_export.plot(x='Device Type', y=[
                'Total', 'Registered', 'Unique'], kind='bar', figsize=(14, 20))
 plt.subplots_adjust(bottom=0.22)
 plt.xlabel("Device Type")
-#manager = plt.get_current_fig_manager()
-#manager.window.state('zoomed')
-#manager.full_screen_toggle()
-#Maximize window for different backends
 plt_maximize()
 plt.show()
 
-#print(df_export.head())
-#print(device_types)
-#print(total_devices)
-#print(registered_devices)
-#print(unique_devices)
 
 
