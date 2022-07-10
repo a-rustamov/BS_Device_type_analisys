@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import os
 from plot_max_window import plt_maximize
 
+
 def by_device_type (dev_type):
     ''' Take device type and update total, registered and unique device counts per device type    '''
     type_x = df[df['DeviceType'] == dev_type]
@@ -56,7 +57,6 @@ plt.xlabel("Device Type")
 #Maximize window for different backends
 plt_maximize()
 plt.show()
-#print(plt.get_backend())
 
 #print(df_export.head())
 #print(device_types)
