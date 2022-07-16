@@ -1,4 +1,5 @@
 # BS_Device_type_analisys
+Run main.py
 Import csv file with BS device names, types, MAC address and registration. 
 Find:
 Number of devices per device type
