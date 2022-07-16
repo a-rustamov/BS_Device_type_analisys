@@ -10,9 +10,6 @@ def by_device_type (dev_type):
     total_devices.append(len(type_x['MacAddress']))
     registered_devices.append(len(type_x[type_x['Registered'] == True]))
     unique_devices.append(len(pd.unique(type_x['MacAddress'])))
-    #print(type_x.head())
-    #print(len(pd.unique(type_x['MacAddress'])))
-
 
 def export_device_type(dev_type, total_devices, registered_devices, unique_devices):
     '''Export to CSV total devices, registered devices and unique devices per device type'''
@@ -38,7 +35,6 @@ for dev_type in device_types:
 #Make dictionary out of found data, create dataframe
 dict_for_df = {'Device Type': device_types,
                'Total': total_devices, 'Registered': registered_devices, 'Unique': unique_devices}
-#df_export = pd.DataFrame(dict_for_df).set_index('DeviceType')
 df_export = pd.DataFrame(dict_for_df)
 
 #Export dataframw to CSV
@@ -46,7 +42,7 @@ export_filename = os.path.join(dirname, 'Data', 'Device_type_export.csv')
 df_export.to_csv(export_filename)
 
 # Plot resulted data
-plt.rcParams.update({'font.size': 6})  # must set in top
+plt.rcParams.update({'font.size': 6})  
 df_export = df_export.sort_values(by='Total', ascending=False) #Set descending order based on total devices
 df_export.plot(x='Device Type', y=[
                'Total', 'Registered', 'Unique'], kind='bar', figsize=(14, 20))
@@ -54,6 +50,3 @@ plt.subplots_adjust(bottom=0.22)
 plt.xlabel("Device Type")
 plt_maximize()
 plt.show()
-
-
-
