@@ -8,8 +8,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-
-
 Find:
 Number of devices per device type
 Number of registered devices per device type
