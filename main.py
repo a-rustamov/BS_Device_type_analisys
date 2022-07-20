@@ -6,7 +6,8 @@ from plot_max_window import plt_maximize
 
 def by_device_type (dev_type):
     ''' Take device type and update total, registered and unique device counts per device type    '''
-    type_x = df[df['DeviceType'] == dev_type]
+    type_x = df[df['DeviceType'] == dev_type] #List of devices with given device type
+    #Append respective lists and find required values
     total_devices.append(len(type_x['MacAddress']))
     registered_devices.append(len(type_x[type_x['Registered'] == True]))
     unique_devices.append(len(pd.unique(type_x['MacAddress'])))
